@@ -13,15 +13,12 @@ public class Person {
 	}
 
 
-	public void introduce() {
+	public void introduce(String name, int hp, int mp) {
 		System.out.println("自己紹介をはじめます！");
-		System.out.println("俺の名前は"+this.name);
-		System.out.println("残りのHPは"+this.hp+"やねん");
-		System.out.println("あと、俺の魔力、"+this.mp+"らしいわ");
+		System.out.println("俺の名前は"+name);
+		System.out.println("残りのHPは"+hp+"やねん");
+		System.out.println("あと、俺の魔力、"+mp+"らしいわ");
 		System.out.println("ヨロシク");
 		System.out.println();
-	}
-	public void recover() {
-		this.hp += 100;
 	}
 }
