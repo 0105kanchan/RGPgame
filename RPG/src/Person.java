@@ -7,18 +7,24 @@ public class Person {
 
 	Person(String name, int hp, int mp){
 		this.name = name;
-		this.hp = hp;
-		this.mp = mp;
-
+		this.hp = hp ;
+		this.mp = mp ;
 	}
 
+	public void attack(String attacker, int mp) {
+		System.out.println(attacker + "の攻撃！魔力は"+ mp + "!");
 
-	public void introduce() {
-		System.out.println("自己紹介をはじめます！");
-		System.out.println("俺の名前は"+this.name);
-		System.out.println("残りのHPは"+this.hp+"やねん");
-		System.out.println("あと、俺の魔力、"+this.mp+"らしいわ");
-		System.out.println("ヨロシク");
-		System.out.println();
+	}
+	public void damage(String damager, int mp) {
+		System.out.println(damager + "がダメージ"+ mp +"を受けた!");
+		this.hp -= mp;
+//		ここでhpが減る人、ダウンをする人を定めたいができていない
+		System.out.println("残りhpは"+ this.hp);
+		if(this.hp <= 0) {
+			System.out.println("ここで"+ this.name + "がまさかのダウン~");
+		}
+	}
+	public void say(String attacker) {
+		System.out.println("DJ社長からの一言："+attacker+"まじつえ〜まじ卍〜");
 	}
 }
