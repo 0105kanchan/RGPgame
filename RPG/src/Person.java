@@ -10,21 +10,27 @@ public class Person {
 		this.hp = hp ;
 		this.mp = mp ;
 	}
-
-	public void attack(String attacker, int mp) {
-		System.out.println(attacker + "の攻撃！魔力は"+ mp + "!");
-
+	public void introduce() {
+		System.out.println("自己紹介！");
+		System.out.println("名前は"+this.name);
+		System.out.println("体力は"+this.hp);
+		System.out.println("魔力は"+this.mp);
+		System.out.println();
 	}
-	public void damage(String damager, int mp) {
-		System.out.println(damager + "がダメージ"+ mp +"を受けた!");
-		this.hp -= mp;
-//		ここでhpが減る人、ダウンをする人を定めたいができていない
-		System.out.println("残りhpは"+ this.hp);
-		if(this.hp <= 0) {
-			System.out.println("ここで"+ this.name + "がまさかのダウン~");
+
+	public void attack() {
+		System.out.println(this.name + "の攻撃！魔力は"+ this.mp + "!");
+	}
+
+	public void damage(Person attacker) {
+		System.out.println(this.name + "がダメージ"+ attacker.mp +"を受けた!");
+		this.hp -= attacker.mp;
+		if(this.hp > 0) {
+		System.out.println(this.name+"の残りhpは"+ this.hp);
 		}
-	}
-	public void say(String attacker) {
-		System.out.println("DJ社長からの一言："+attacker+"まじつえ〜まじ卍〜");
+		if(this.hp <= 0) {
+			System.out.println("お〜っと、ここで"+ this.name + "がまさかのダウン~");
+			System.out.println(attacker.name+" まじつえ〜まじ卍〜");
+		}
 	}
 }
