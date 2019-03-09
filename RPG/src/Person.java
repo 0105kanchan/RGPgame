@@ -19,7 +19,7 @@ public class Person {
 	}
 
 	public void attack() {
-		System.out.println(this.name + "の攻撃！魔力は"+ this.mp + "!");
+		System.out.println(this.name + "の攻撃！"+ this.name +"魔力は"+ this.mp + "!");
 	}
 
 	public void damage(Person attacker) {
