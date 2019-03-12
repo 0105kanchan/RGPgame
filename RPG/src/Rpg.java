@@ -40,7 +40,7 @@ public class Rpg {
 
 				Person attacker = fighter[i];
 				Person damager = fighter[j];
-				attacker.attack(damager,attacker);
+				attacker.attack(damager);
 
 				System.out.println();
 			}
