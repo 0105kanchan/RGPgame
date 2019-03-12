@@ -18,15 +18,16 @@ public class Person {
 		System.out.println();
 	}
 
-	public void attack() {
+	public void attack(Person damager,Person attacker) {
 		System.out.println(this.name + "の攻撃！"+ this.name +"魔力は"+ this.mp + "!");
+		damager.damage(attacker);
 	}
 
 	public void damage(Person attacker) {
 		System.out.println(this.name + "がダメージ"+ attacker.mp +"を受けた!");
 		this.hp -= attacker.mp;
 		if(this.hp > 0) {
-		System.out.println(this.name+"の残りhpは"+ this.hp);
+			System.out.println(this.name+"の残りhpは"+ this.hp);
 		}
 		if(this.hp <= 0) {
 			System.out.println("お〜っと、ここで"+ this.name + "がまさかのダウン~");
